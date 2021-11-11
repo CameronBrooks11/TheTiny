@@ -1,0 +1,45 @@
+name: Gather screenshots
+on:
+  push:
+    paths:
+      - '**.scad'
+  workflow_dispatch:
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    name: Screenshot
+    steps:
+      - name: Checking out code
+        uses: actions/checkout@v2
+      - name: Install xmllint
+        run: sudo apt-get install -y openscad 
+      - name: Screenshot frame floor 
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: 
+            openscad -o frame_floor.png frame_floor.scad
+      - name: Screenshot sheet floor 
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: 
+            openscad -o sheet_floor.png sheet_floor.scad
+      - name: Screenshot frame walls
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: 
+            openscad -o frame_walls.png frame_walls.scad
+      - name: Screenshot house
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: 
+            openscad -o house.png house.scad
+      - name: Archive screenshots 
+        uses: actions/upload-artifact@v2
+        with:
+          name: images 
+          path: |
+            frame_floor.png
+            sheet_floor.png
+            frame_walls.png
+            house.png
+      - uses: stefanzweifel/git-auto-commit-action@v4
