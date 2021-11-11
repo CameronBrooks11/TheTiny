@@ -24,7 +24,7 @@ the `Methods` available to you.
 #### Methods
 | Method       | Return Type | Description |
 | :----------- | :---------- | :---------- |
-| inches(i, f) | `float`     | `i` is an interger, or full inch measurements. For fractional inches specify them as `f`. The math behind this is `i+f` | 
+| inches(i,&nbsp;f) | `float`     | `i` is an interger, or full inch measurements. For fractional inches specify them as `f`. The math behind this is `i+f` | 
 | feet(f)      | `int`       | `f` is the number of feet you want to convert into inches. The math behind this is `f * 12` |
 
 Examples:  
@@ -61,7 +61,7 @@ Right now the only contract between each layer is the `start_height` variable th
 
 Contributions are always welcome!
 
-See `contributing.md` for ways to get started.
+See `CONTRIBUTING.md` for ways to get started.
 
 
 ## Authors
