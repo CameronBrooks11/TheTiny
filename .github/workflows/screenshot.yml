@@ -14,24 +14,12 @@ jobs:
       - name: Install xmllint
         run: sudo apt-get install -y openscad 
       - name: Screenshot frame floor 
-        uses: GabrielBB/xvfb-action@v1
+        uses: GabrielBB/xvfb-action@v1.6
         with:
-          run: 
+          run: |
             openscad -o frame_floor.png frame_floor.scad
-      - name: Screenshot sheet floor 
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: 
             openscad -o sheet_floor.png sheet_floor.scad
-      - name: Screenshot frame walls
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: 
             openscad -o frame_walls.png frame_walls.scad
-      - name: Screenshot house
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: 
             openscad -o house.png house.scad
       - name: Archive screenshots 
         uses: actions/upload-artifact@v2
