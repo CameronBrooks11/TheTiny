@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checking out code
         uses: actions/checkout@v2
-      - name: Install xmllint
+      - name: Install OpenSCAD
         run: sudo apt-get install -y openscad 
       - name: Screenshot frame floor 
         uses: GabrielBB/xvfb-action@v1.6
@@ -30,4 +30,3 @@ jobs:
             sheet_floor.png
             frame_walls.png
             house.png
-      - uses: stefanzweifel/git-auto-commit-action@v4
