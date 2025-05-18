@@ -12,7 +12,7 @@ jobs:
     name: Screenshot
     steps:
       - name: Checking out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install OpenSCAD
         run: sudo apt-get install -y openscad
@@ -28,7 +28,7 @@ jobs:
             openscad -o images/house.png src/house.scad
 
       - name: Archive screenshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: images
           path: images/

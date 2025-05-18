@@ -25,6 +25,7 @@ sheet_walls_start_height = -inches(0, 1 / 2); // Include a bit of overlap over t
 // No configuration variables are below this line
 
 if (show_frame_floor == 1) {
+  translate([0, 0, frame_floor_start_height])
   frame_floor(width=wall_width - wall_sheeting * 2, depth=wall_depth - wall_sheeting * 2);
 }
 
