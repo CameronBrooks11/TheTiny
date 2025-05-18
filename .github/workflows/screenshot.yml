@@ -1,9 +1,11 @@
 name: Gather screenshots
+
 on:
   push:
     paths:
       - "src/**/*.scad" # Only run when SCAD files in src/ change
   workflow_dispatch:
+
 jobs:
   screenshot:
     runs-on: ubuntu-latest
@@ -11,22 +13,22 @@ jobs:
     steps:
       - name: Checking out code
         uses: actions/checkout@v2
+
       - name: Install OpenSCAD
         run: sudo apt-get install -y openscad
+
       - name: Screenshot frame floor
         uses: GabrielBB/xvfb-action@v1.6
         with:
           run: |
-            openscad -o frame_floor.png src/frame_floor.scad
-            openscad -o sheet_floor.png src/sheet_floor.scad
-            openscad -o frame_walls.png src/frame_walls.scad
-            openscad -o house.png src/house.scad
+            mkdir -p images
+            openscad -o images/frame_floor.png src/frame_floor.scad
+            openscad -o images/sheet_floor.png src/sheet_floor.scad
+            openscad -o images/frame_walls.png src/frame_walls.scad
+            openscad -o images/house.png src/house.scad
+
       - name: Archive screenshots
         uses: actions/upload-artifact@v2
         with:
           name: images
-          path: |
-            frame_floor.png
-            sheet_floor.png
-            frame_walls.png
-            house.png
+          path: images/

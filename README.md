@@ -2,7 +2,7 @@
 
 The plans included here are for your classic 8'x20' tiny house.
 
-![The Tiny](house.png?raw=true "The Tiny")
+![The Tiny](images/house.png?raw=true "The Tiny")
 
 To view or change these plans you will need [OpenSCAD](https://openscad.org/)
 
@@ -68,6 +68,7 @@ See `CONTRIBUTING.md` for ways to get started.
 ## Authors
 
 - [@jjshoe](https://www.github.com/jjshoe)
+- [@CameronBrooks11](https://github.com/CameronBrooks11)
 
 ## License
 
