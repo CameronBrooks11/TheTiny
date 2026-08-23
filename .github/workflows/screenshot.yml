@@ -12,13 +12,13 @@ jobs:
     name: Screenshot
     steps:
       - name: Checking out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install OpenSCAD
         run: sudo apt-get install -y openscad
 
       - name: Screenshot frame floor
-        uses: GabrielBB/xvfb-action@v1.6
+        uses: GabrielBB/xvfb-action@v1.7
         with:
           run: |
             mkdir -p images
@@ -28,7 +28,7 @@ jobs:
             openscad -o images/house.png src/house.scad
 
       - name: Archive screenshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: images
           path: images/
