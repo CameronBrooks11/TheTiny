@@ -6,6 +6,9 @@ on:
       - "src/**/*.scad" # Only run when SCAD files in src/ change
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   screenshot:
     runs-on: ubuntu-latest
