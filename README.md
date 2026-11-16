@@ -100,7 +100,7 @@ renders the pictures.
 There are no doors or windows, so no headers. The gable ends aren't framed or
 sheathed, and the walls aren't sheathed. Nothing checks spans or loads: pick
 the joist and rafter sizes from your local span tables. Planned work is in the
-[issue tracker](https://github.com/CameronBrooks11/TheTiny/issues).
+[issue tracker](https://github.com/CameronBrooks11/tiny-house-scad/issues).
 
 ## Licence
 
