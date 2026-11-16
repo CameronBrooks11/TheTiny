@@ -93,7 +93,7 @@ house at 12/12. For each it checks that:
 - the cut list buys one piece of the right stock for every member.
 
 It also checks that four sizes that can't be built are refused. `just images`
-renders the pictures.
+renders the pictures and trims them to the model with ImageMagick.
 
 ## Not covered yet
 
